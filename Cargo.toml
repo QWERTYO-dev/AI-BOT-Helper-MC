@@ -8,3 +8,14 @@ azalea = "0.16.0"
 tokio = { version = "1", features = ["full"] }
 rand = "0.8"
 anyhow = "1.0"
+
+# --- STABILITY SETTINGS (Do not remove) ---
+# These settings significantly reduce memory usage during compilation
+# to prevent "Out of Memory" crashes on free cloud tiers.
+
+[profile.release]
+codegen-units = 1
+incremental = false
+lto = "off"
+debug = false
+panic = "abort"
