@@ -17,7 +17,7 @@ async fn main() {
     
     // REPLACE 'YOUR_SERVER_IP' WITH YOUR ACTUAL SERVER IP/DOMAIN
     ClientBuilder::new()
-        .start(account, "YOUR_SERVER_IP:25565")
+        .start(account, "DZ_FUN.aternos.me:24203")
         .await
         .unwrap();
 }
