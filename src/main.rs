@@ -16,8 +16,12 @@ async fn main() {
     let account = Account::offline("CompanionBot");
     
     // REPLACE 'YOUR_SERVER_IP' WITH YOUR ACTUAL SERVER IP/DOMAIN
-    ClientBuilder::new()
-        .start(account, "DZ_FUN.aternos.me:24203")
-        .await
-        .unwrap();
+    let client = ClientBuilder::new()
+    .start(account, "DZ_FUN.aternos.me:24203")
+    .await;
+
+    // Check if the bot started correctly
+    if let Err(e) = client {
+    eprintln!("Error starting the bot: {:?}", e);
+    }
 }
